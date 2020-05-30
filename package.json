@@ -12,6 +12,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5"
   },
+  "homepage": "https://dreamqyq.github.io/react-demo/build",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
