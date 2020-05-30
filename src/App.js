@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
 import './App.css';
+import Button from "./components/Button"
 
 class App extends Component {
   render() {
@@ -9,10 +10,10 @@ class App extends Component {
         <h1>Hello React + Redux + React-Redux</h1>
         <div>
           <p>你点击了 {this.props.count} 次</p>
-          <button onClick={this.props.add1.bind(this)}>+1</button>
-          <button onClick={this.props.minus1.bind(this)}>-1</button>
-          <button onClick={this.props.add1IfOdd.bind(this)}>数字为单数，+1</button>
-          <button onClick={this.props.add1Async.bind(this)}>1秒后+1</button>
+          <Button onClick={this.props.add1.bind(this)}>+1</Button>
+          <Button onClick={this.props.minus1.bind(this)}>-1</Button>
+          <Button onClick={this.props.add1IfOdd.bind(this)}>数字为单数，+1</Button>
+          <Button onClick={this.props.add1Async.bind(this)}>1秒后+1</Button>
         </div>
       </div>
     )

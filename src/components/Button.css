@@ -1,0 +1,47 @@
+.button {
+  position: relative;
+  margin: 10px;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 12px 20px;
+  border: 1px solid #dcdfe6;
+  overflow: hidden;
+  display: inline-block;
+  color: #606266;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+}
+
+.button>.circle {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background: #606266;
+  opacity: 0.1;
+  animation: 1s dimple;
+}
+
+.button:hover, .button:active, .button:focus {
+  outline: none;
+  color: #409eff;
+  border-color: #c6e2ff;
+}
+
+.button:active {
+  border-color: #3a8ee6;
+}
+
+@keyframes dimple {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(50);
+  }
+}
