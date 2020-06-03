@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react"
 import { connect } from "react-redux"
-import './App.css';
+import "./App.css"
 import Button from "./components/Button"
 
 class App extends Component {
@@ -25,11 +25,17 @@ function mapStateToProps(state) {
     count: state.count
   }
 }
+
 function mapDispatchToProps(dispatch) {
   return {
-    add1: () => { dispatch({ type: "add", payload: 1 }) },
-    minus1: () => { dispatch({ type: "minus", payload: 1 }) },
-    add1IfOdd: () => { dispatch({ type: "addIfOdd", payload: 1 }) },
+    add1: () => {
+      dispatch({ type: "add", payload: 1 })
+    },
+    minus1: () => {
+      dispatch({ type: "minus", payload: 1 })
+    }, add1IfOdd: () => {
+      dispatch({ type: "addIfOdd", payload: 1 })
+    },
     add1Async: () => {
       setTimeout(() => {
         dispatch({ type: "add", payload: 1 })
@@ -38,4 +44,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)

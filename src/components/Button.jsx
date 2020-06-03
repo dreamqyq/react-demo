@@ -1,8 +1,9 @@
 import React from "react"
 import "./Button.css"
+
 class Button extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.btnRef = React.createRef()
     this.state = {
       isActive: false,
@@ -10,6 +11,7 @@ class Button extends React.Component {
       dimpleY: 0
     }
   }
+
   clickHandle(event) {
     const { clientX, clientY } = event
     const { x, y } = this.btnRef.current.getBoundingClientRect()
@@ -20,24 +22,28 @@ class Button extends React.Component {
     })
     this.props.onClick && this.props.onClick.call(undefined, event)
   }
+
   animationEndHandle() {
     this.setState({
       isActive: false
     })
   }
+
   render() {
     return (
       <button className="button"
-        ref={this.btnRef}
-        onClick={this.clickHandle.bind(this)}
-        onAnimationEnd={() => { this.animationEndHandle() }}
+              ref={this.btnRef}
+              onClick={this.clickHandle.bind(this)}
+              onAnimationEnd={() => {
+                this.animationEndHandle()
+              }}
       >
         {this.props.children}
         {
           this.state.isActive ?
             <span
               className="circle"
-              style={{ left: this.state.dimpleX, top: this.state.dimpleY }}></span> : null
+              style={{ left: this.state.dimpleX, top: this.state.dimpleY }}/> : null
         }
       </button>
     )
